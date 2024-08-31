@@ -26,7 +26,7 @@ impl Window {
     }
 
     pub fn is_close_requested(&self) -> bool {
-        false
+        false 
     }
 
     pub fn get_width(&self) -> u32 {
