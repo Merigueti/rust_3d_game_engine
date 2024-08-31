@@ -11,6 +11,10 @@ fn main() -> Result<(), String> {
 
     let mut my_window = Window::create_window(&video_subsystem, "game tutorial", 800, 600)?;
 
+    println!("Window title: {}", my_window.get_title());
+    println!("Window width: {}", my_window.get_width());
+    println!("Window height: {}", my_window.get_height());
+
     'running: loop {
         for event in event_pump.poll_iter() {
             match event {
@@ -20,6 +24,10 @@ fn main() -> Result<(), String> {
                 },
                 _ => {}
             }
+        }
+
+        if my_window.is_close_requested() {
+            break 'running;
         }
 
         my_window.render();
