@@ -1,5 +1,5 @@
 use sdl2::render::WindowCanvas;
-use sdl2::VideoSubsystem; // Importando diretamente de sdl2
+use sdl2::VideoSubsystem;
 
 pub struct Window {
     canvas: WindowCanvas,
@@ -23,5 +23,21 @@ impl Window {
     pub fn render(&mut self) {
         self.canvas.clear();
         self.canvas.present();
+    }
+
+    pub fn is_close_requested(&self) -> bool {
+        false 
+    }
+
+    pub fn get_width(&self) -> u32 {
+        self.canvas.window().size().0
+    }
+
+    pub fn get_height(&self) -> u32 {
+        self.canvas.window().size().1
+    }
+
+    pub fn get_title(&self) -> String {
+        self.canvas.window().title().to_string()
     }
 }
