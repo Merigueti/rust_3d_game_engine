@@ -14,6 +14,6 @@ impl Game {
     }
 
     pub fn input(&self) -> () {
-
+        
     }
 }
